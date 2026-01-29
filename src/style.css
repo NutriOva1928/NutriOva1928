@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply font-sans bg-gradient-to-br from-lavender-50 via-white to-sage-50 min-h-screen;
+  }
+}
+
+@layer components {
+  /* Card Component */
+  .card {
+    @apply bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg border border-lavender-100/50 p-6 transition-all duration-300 hover:shadow-xl hover:scale-[1.02];
+  }
+
+  /* Button Primary */
+  .btn-primary {
+    @apply bg-gradient-to-r from-lavender-500 to-lavender-600 text-white font-medium py-3 px-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105 active:scale-95;
+  }
+
+  /* Button Secondary */
+  .btn-secondary {
+    @apply bg-white/90 text-lavender-600 font-medium py-3 px-6 rounded-xl border-2 border-lavender-300 shadow-sm hover:shadow-md hover:bg-lavender-50 transition-all duration-300 hover:scale-105 active:scale-95;
+  }
+
+  /* Input Checkbox Styled */
+  .checkbox-custom {
+    @apply w-5 h-5 text-lavender-600 bg-white border-lavender-300 rounded focus:ring-lavender-500 focus:ring-2 transition-all duration-200;
+  }
+
+  /* Badge */
+  .badge {
+    @apply inline-flex items-center px-3 py-1 rounded-full text-sm font-medium;
+  }
+
+  .badge-priority {
+    @apply badge bg-sage-100 text-sage-700;
+  }
+
+  .badge-occasional {
+    @apply badge bg-lavender-100 text-lavender-700;
+  }
+
+  /* Title Gradient */
+  .title-gradient {
+    @apply bg-gradient-to-r from-lavender-600 to-sage-600 bg-clip-text text-transparent;
+  }
+
+  /* Transition Fade */
+  .fade-enter-active,
+  .fade-leave-active {
+    @apply transition-all duration-500;
+  }
+
+  .fade-enter-from,
+  .fade-leave-to {
+    @apply opacity-0 transform scale-95;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
