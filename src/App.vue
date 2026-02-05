@@ -17,8 +17,8 @@ const handleProfileSelection = (profile: 'pcos' | 'no-pcos') => {
   currentModule.value = 1
 }
 
-// Handler para reset
-const resetApp = () => {
+// Resetear estado al inicio
+const resetToHome = () => {
   userProfile.value = null
   currentModule.value = 0
 }
@@ -36,152 +36,158 @@ const prevModule = () => {
   }
 }
 
-// Computed para mostrar/ocultar componentes
 const showLanding = computed(() => userProfile.value === null)
-const showDashboard = computed(() => userProfile.value !== null)
 
-// Títulos de módulos
+// Títulos de módulos dinámicos
 const moduleTitle = computed(() => {
   switch (currentModule.value) {
     case 1:
-      return userProfile.value === 'pcos' 
-        ? 'Entendiendo el SOP' 
-        : 'Salud Hormonal Femenina'
+      return userProfile.value === 'pcos' ? 'Entiendo el SOP' : 'Entiendo mi Salud'
     case 2:
-      return 'Nutrición Inteligente'
+      return userProfile.value === 'pcos' ? 'Manejo Nutricional' : 'Nutrición Preventiva'
     case 3:
-      return 'Hábitos de Bienestar'
+      return userProfile.value === 'pcos' ? 'Hábitos de Manejo' : 'Hábitos de Prevención'
     case 4:
-      return 'Importante: Aviso Legal'
+      return 'Información Importante'
     default:
       return ''
   }
 })
+
+const profileGradient = computed(() => {
+  return userProfile.value === 'pcos'
+    ? 'from-pastel-lilac-300 to-pastel-pink-200'
+    : 'from-pastel-mint-300 to-pastel-sky-200'
+})
 </script>
 
 <template>
-  <div class="min-h-screen flex flex-col">
-    <!-- Header con logo y reset (solo visible cuando hay perfil seleccionado) -->
+  <div class="min-h-screen bg-[#FDFCF8] flex flex-col font-sans transition-colors duration-500">
+    <!-- Navbar / Header -->
     <header 
-      v-if="showDashboard" 
-      class="bg-white/70 backdrop-blur-md border-b border-lavender-100 sticky top-0 z-50 shadow-sm"
+      v-if="!showLanding" 
+      class="sticky top-0 z-40 bg-white/60 backdrop-blur-md border-b border-gray-100 px-6 py-4"
     >
-      <div class="container mx-auto px-4 py-4 flex justify-between items-center">
-        <div class="flex items-center gap-3">
-          <div class="w-10 h-10 bg-gradient-to-br from-lavender-400 to-sage-400 rounded-xl flex items-center justify-center">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-            </svg>
-          </div>
-          <h1 class="text-xl font-semibold title-gradient">NutriHealth SOP</h1>
-        </div>
+      <div class="max-w-6xl mx-auto flex justify-between items-center">
+        <!-- Botón Inicio (Superior Izquierda) -->
         <button 
-          @click="resetApp"
-          class="text-sm text-lavender-600 hover:text-lavender-800 font-medium transition-colors duration-200 flex items-center gap-1"
+          @click="resetToHome"
+          class="flex items-center gap-2 px-5 py-2.5 rounded-2xl bg-pastel-sky-100 text-gray-700 font-semibold shadow-sm hover:shadow-md hover:bg-pastel-sky-200 transition-all duration-300 border border-pastel-sky-200/50"
         >
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
           </svg>
           Inicio
         </button>
+
+        <div class="hidden md:flex items-center gap-3">
+          <div :class="['w-8 h-8 rounded-full bg-gradient-to-br', profileGradient]"></div>
+          <span class="text-xs font-bold text-gray-400 tracking-widest uppercase">
+            Perfil: {{ userProfile === 'pcos' ? 'Manejo SOP' : 'Prevención' }}
+          </span>
+        </div>
       </div>
     </header>
 
-    <!-- Main Content -->
-    <main class="flex-1 flex flex-col">
-      <!-- Landing/Selector Screen -->
+    <!-- Main Content Area -->
+    <main class="flex-grow flex flex-col">
       <Transition name="fade" mode="out-in">
+        <!-- Landing Selector -->
         <LandingSelector 
           v-if="showLanding" 
           @select-profile="handleProfileSelection"
         />
 
-        <!-- Dashboard Educativo -->
-        <div v-else class="container mx-auto px-4 py-8 max-w-5xl">
-          <!-- Progress Indicator -->
-          <div class="mb-8">
-            <div class="flex justify-between items-center mb-2">
-              <span class="text-sm font-medium text-lavender-700">Progreso del Módulo</span>
-              <span class="text-sm font-medium text-lavender-700">{{ currentModule }}/4</span>
-            </div>
-            <div class="w-full bg-lavender-100 rounded-full h-2.5">
-              <div 
-                class="bg-gradient-to-r from-lavender-500 to-sage-500 h-2.5 rounded-full transition-all duration-500"
-                :style="{ width: `${(currentModule / 4) * 100}%` }"
-              ></div>
-            </div>
+        <!-- Dashboard -->
+        <div v-else class="max-w-6xl mx-auto w-full px-6 py-10 flex-grow">
+          <!-- Module Header -->
+          <div class="text-center mb-12">
+            <span class="text-gray-400 text-xs font-bold uppercase tracking-[0.3em] mb-2 block animate-pulse">
+              Módulo {{ currentModule }} / 4
+            </span>
+            <h2 class="text-4xl md:text-5xl font-bold text-gray-700 title-gradient leading-tight">
+              {{ moduleTitle }}
+            </h2>
           </div>
 
-          <!-- Module Title -->
-          <h2 class="text-3xl md:text-4xl font-bold title-gradient mb-8 text-center">
-            {{ moduleTitle }}
-          </h2>
+          <!-- Component Render -->
+          <div class="min-h-[50vh]">
+            <Transition name="fade" mode="out-in">
+              <ModuleInfo 
+                v-if="currentModule === 1" 
+                :profile="userProfile!"
+              />
+              <ModuleNutrition 
+                v-else-if="currentModule === 2" 
+                :profile="userProfile!"
+              />
+              <ModuleHabits 
+                v-else-if="currentModule === 3"
+                :profile="userProfile!"
+              />
+              <ModuleDisclaimer 
+                v-else-if="currentModule === 4"
+              />
+            </Transition>
+          </div>
 
-          <!-- Module Content -->
-          <Transition name="fade" mode="out-in">
-            <ModuleInfo 
-              v-if="currentModule === 1" 
-              :profile="userProfile!"
-            />
-            <ModuleNutrition 
-              v-else-if="currentModule === 2" 
-              :profile="userProfile!"
-            />
-            <ModuleHabits 
-              v-else-if="currentModule === 3"
-            />
-            <ModuleDisclaimer 
-              v-else-if="currentModule === 4"
-            />
-          </Transition>
-
-          <!-- Navigation Buttons -->
-          <div class="flex justify-between items-center mt-10 gap-4">
+          <!-- Navigation Footer -->
+          <footer class="mt-16 flex justify-between items-center border-t border-gray-100 pt-10">
             <button
               v-if="currentModule > 1"
               @click="prevModule"
-              class="btn-secondary"
+              class="group flex items-center gap-3 text-gray-500 font-bold hover:text-gray-700 transition-colors"
             >
-              <span class="flex items-center gap-2">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+              <div class="w-10 h-10 rounded-full border-2 border-gray-100 flex items-center justify-center group-hover:bg-gray-50 group-hover:border-gray-200 transition-all">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
                 </svg>
-                Anterior
-              </span>
+              </div>
+              Anterior
             </button>
             <div v-else></div>
 
             <button
               v-if="currentModule < 4"
               @click="nextModule"
-              class="btn-primary ml-auto"
+              class="group flex items-center gap-4 px-8 py-4 bg-gray-700 text-white rounded-[2rem] font-bold shadow-lg hover:shadow-xl hover:translate-y-[-2px] transition-all hover:bg-gray-800"
             >
-              <span class="flex items-center gap-2">
-                Siguiente
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+              Siguiente
+              <div class="w-6 h-6 rounded-full bg-white/20 flex items-center justify-center group-hover:translate-x-1 transition-transform">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
                 </svg>
-              </span>
+              </div>
             </button>
-          </div>
+          </footer>
         </div>
       </Transition>
     </main>
 
-    <!-- Footer -->
-    <footer class="bg-white/50 backdrop-blur-sm border-t border-lavender-100 py-6 mt-auto">
-      <div class="container mx-auto px-4 text-center">
-        <p class="text-sm text-gray-600">
-          © 2026 NutriHealth SOP - Herramienta Educativa
-        </p>
-        <p class="text-xs text-gray-500 mt-1">
-          Tesis de Grado - Nutrición y Salud Hormonal
-        </p>
-      </div>
+    <!-- Footer Copyright -->
+    <footer v-if="!showLanding" class="py-8 text-center border-t border-gray-50">
+      <p class="text-xs text-gray-300 font-medium tracking-widest uppercase">
+        NutriHealth &copy; 2026 &bull; Educación para el Bienestar
+      </p>
     </footer>
   </div>
 </template>
 
-<style scoped>
-/* Animations already defined in global CSS */
+<style>
+.fade-enter-active,
+.fade-leave-active {
+  transition: all 0.4s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+.title-gradient {
+  background: linear-gradient(135deg, #374151 0%, #6B7280 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 </style>

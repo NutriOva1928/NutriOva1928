@@ -24,135 +24,138 @@ interface HabitDetail {
   category: 'sleep' | 'nutrition' | 'habits' | 'stress' | 'protection'
   details: {
     intro: string
-    sopFocus?: string
+    preventionFocus?: string
     points?: HabitPoint[]
     categories?: HabitCategory[]
+    stages?: {
+      title: string
+      items: string[]
+    }
   }
 }
 
-// 8 Hábitos de Bienestar para SOP - Enfoque en Acompañamiento y Manejo
+// 8 Hábitos de Bienestar para perfil SIN SOP - Enfoque en Prevención y Optimización
 const habits: HabitDetail[] = [
   {
     id: 'hidratacion',
     title: 'Hidratación Consciente',
-    summary: 'Mejora la función renal y hepática para regular hormonas',
+    summary: 'Mejora función metabólica y elimina toxinas',
     icon: 'droplet',
     category: 'nutrition',
     details: {
       intro: 'Beber al menos 2 litros de agua al día (8 a 10 vasos). La hidratación adecuada mejora función metabólica y ayuda a eliminar toxinas.',
-      sopFocus: 'En el SOP, una buena hidratación ayuda a los órganos encargados de metabolizar y eliminar el exceso de hormonas, como andrógenos.',
+      preventionFocus: 'Una buena hidratación optimiza todos los procesos metabólicos y mantiene el equilibrio hormonal a largo plazo.',
       points: [
-        { title: 'Función Renal y Hepática', content: 'Mejora la capacidad del cuerpo para eliminar toxinas y exceso de hormonas.' },
-        { title: 'Reduce la Inflamación', content: 'Combate la inflamación crónica asociada al SOP.' },
-        { title: 'Control del Apetito', content: 'La sed a veces se confunde con hambre, beber agua regula mejor las señales.' },
-        { title: 'Combate la Fatiga', content: 'La deshidratación leve puede contribuir al cansancio característico del SOP.' }
+        { content: 'Combate la inflamación sistémica del cuerpo.' },
+        { content: 'Reduce la retención de líquidos.' },
+        { content: 'Favorece la pérdida de peso y el metabolismo.' }
       ]
     }
   },
   {
     id: 'horarios',
     title: 'Horarios Regulares de Comida',
-    summary: 'Estabiliza glucosa e insulina, clave para el SOP',
+    summary: 'Mantiene energía constante durante el día',
     icon: 'clock',
     category: 'nutrition',
     details: {
       intro: 'Comer a horarios similares cada día estabiliza glucosa e insulina, reduciendo antojos y mejorando energía.',
-      sopFocus: 'Dado que la resistencia a la insulina es central en muchos casos de SOP, mantener horarios regulares es una estrategia fundamental.',
+      preventionFocus: 'Mantener horarios regulares previene la resistencia a la insulina y optimiza tu metabolismo energético.',
       points: [
-        { title: 'Frecuencia', content: 'Evitar ayunos prolongados que disparen cortisol y desregulen la insulina. Idealmente 3 comidas principales y 1-2 snacks si es necesario.' },
-        { title: 'Equilibrio', content: 'Cada comida debe incluir proteína, fibra y grasa saludable para evitar picos de azúcar.' },
-        { title: 'Calorías Temprano', content: 'Priorizar comidas más abundantes en las primeras horas del día y cenas ligeras.' },
-        { title: 'Consistencia', content: 'Mantener horarios similares incluso en fines de semana para reforzar el hábito.' }
+        { title: 'Desayuno Temprano', content: 'Comer antes de las 8:30 a.m. se asocia con menor resistencia a la insulina.' },
+        { title: 'Calorías Inteligentes', content: 'Priorizar comidas fuertes en la mañana/tarde y cenas ligeras.' },
+        { title: 'Evitar Cenas Tardías', content: 'Cenar al menos 2-3 horas antes de dormir ayuda a la digestión y manejo de grasa.' },
+        { title: 'Consistencia', content: 'Tratar de mantener los mismos horarios incluso en fines de semana para reforzar el hábito.' }
       ]
     }
   },
   {
     id: 'sueno',
     title: 'Sueño Reparador (7-9h)',
-    summary: 'Baja cortisol para mejorar ovulación e insulina',
+    summary: 'Mejora memoria, ánimo y previene enfermedades',
     icon: 'moon',
     category: 'sleep',
     details: {
       intro: 'El sueño de calidad regula cortisol, leptina y grelina (hormonas del estrés y apetito), clave para equilibrio hormonal.',
-      sopFocus: 'En el SOP, el sueño de calidad ayuda a bajar el cortisol, mejorando la ovulación y reduciendo la resistencia a la insulina.',
+      preventionFocus: 'El sueño de calidad mejora la memoria, el estado de ánimo y previene enfermedades metabólicas futuras como diabetes.',
       points: [
-        { title: 'Grelina y Leptina', content: 'Dormir mal aumenta la grelina (hormona del hambre) y disminuye leptina (saciedad), complicando el control de peso.' },
-        { title: 'Cortisol', content: 'Un sueño deficiente eleva el cortisol, lo que empeora la resistencia a la insulina y puede interferir con la ovulación.' },
-        { title: 'Insulina', content: 'Estudios muestran que la privación de sueño reduce la sensibilidad a la insulina significativamente.' },
-        { title: 'Ciclo Vicioso', content: 'El SOP puede causar apnea del sueño, la cual a su vez empeora la resistencia a la insulina, creando un círculo negativo.' }
+        { content: 'Mejora la memoria, el estado de ánimo y la función cognitiva.' },
+        { content: 'Estimula el sistema inmunológico.' },
+        { content: 'Facilita la recuperación muscular.' },
+        { content: 'Ayuda a controlar los niveles de azúcar en sangre.' }
       ]
     }
   },
   {
     id: 'movimiento',
     title: 'Movimiento Diario',
-    summary: 'Entrenamiento de fuerza mejora captación de glucosa',
+    summary: 'Salud cardiovascular y liberación de endorfinas',
     icon: 'activity',
     category: 'habits',
     details: {
-      intro: 'Al menos 30 minutos de actividad física moderada mejora sensibilidad a insulina y libera endorfinas.',
-      sopFocus: 'El entrenamiento de fuerza es especialmente importante en el SOP porque aumenta la masa muscular, mejorando la captación de glucosa y reduciendo la resistencia a la insulina.',
+      intro: 'Al menos 30 minutos de actividad física moderada mejora sensibilidad a insulina y libera endorfinas (hormona del bienestar).',
+      preventionFocus: 'La actividad física regular es el pilar fundamental para la salud cardiovascular y la liberación de endorfinas que mejoran el bienestar emocional.',
       points: [
-        { title: 'Caminar', content: 'Actividad de bajo impacto que mejora la circulación y ayuda a regular el azúcar post-comida.' },
-        { title: 'Cardio Moderado', content: 'Correr, nadar, bicicleta - quema de calorías y mejora de salud cardiovascular.' },
-        { title: 'Entrenamiento de Fuerza', content: 'Pesas, bandas de resistencia o peso corporal. Fundamental para SOP porque el músculo es el principal consumidor de glucosa.' }
+        { title: 'Caminar', content: 'Actividad de bajo impacto ideal para comenzar y mantener regularidad.' },
+        { title: 'Cardio', content: 'Correr, nadar, subir, remar y andar en bicicleta son ejemplos de ejercicios cardiovasculares que aumentan la frecuencia cardíaca.' },
+        { title: 'Entrenamiento de fuerza', content: 'Las pesas, las bandas de resistencia o el peso corporal se utilizan frecuentemente en ejercicios de fuerza, que se centran en desarrollar músculo.' }
       ]
     }
   },
   {
     id: 'estres',
     title: 'Gestión del Estrés',
-    summary: 'Reduce cortisol que afecta ovulación y andrógenos',
+    summary: 'Reduce cortisol para equilibrio hormonal',
     icon: 'heart',
     category: 'stress',
     details: {
       intro: 'Practicar técnicas de relajación (respiración, meditación, yoga) reduce cortisol elevado que afecta otros ejes hormonales.',
-      sopFocus: 'En el SOP, el estrés crónico eleva el cortisol, lo cual puede aumentar los andrógenos y empeorar los síntomas del síndrome.',
+      preventionFocus: 'Mantener el cortisol en niveles saludables previene desequilibrios hormonales y protege tu salud a largo plazo.',
       points: [
-        { title: 'Respiración Profunda', content: 'Al inhalar lento y profundo, el cuerpo envía señales al cerebro para calmarse, disminuyendo frecuencia cardíaca y presión.' },
-        { title: 'Meditación y Mindfulness', content: 'Ayudan a despejar la sobrecarga mental y reducir emociones negativas. Efectivas para bajar cortisol con práctica regular.' },
-        { title: 'Yoga', content: 'Combina ejercicio físico y mental, aliviando la ansiedad y promoviendo relajación profunda, ideal para mujeres con SOP.' }
+        { title: 'Respiración Profunda', content: 'Al inhalar lento y profundo, el cuerpo envía señales al cerebro para calmarse, disminuyendo la frecuencia cardíaca y la presión arterial.' },
+        { title: 'Meditación y Mindfulness', content: 'Ayudan a despejar la sobrecarga mental, reducir emociones negativas y enfocar en el presente. Son efectivas para bajar el cortisol, especialmente si se practican regularmente.' },
+        { title: 'Yoga', content: 'Combina ejercicio físico y mental, aliviando la ansiedad y promoviendo un estado de relajación profunda.' }
       ]
     }
   },
   {
     id: 'alimentacion',
     title: 'Consciencia Alimentaria',
-    summary: 'Bajo índice glucémico y fibra para regular insulina',
+    summary: 'Variedad y equilibrio para energía constante',
     icon: 'eye',
     category: 'nutrition',
     details: {
       intro: 'Comer sin distracciones, masticando bien y reconociendo señales de hambre y saciedad mejora digestión y relación con la comida.',
-      sopFocus: 'Para el SOP es crucial priorizar alimentos de bajo índice glucémico para evitar picos de azúcar que empeoran la resistencia a la insulina.',
+      preventionFocus: 'Prioriza la variedad y el equilibrio en tu alimentación para mantener la energía constante durante todo el día.',
       points: [
-        { title: 'Sin Distracciones', content: 'Comer sin pantallas permite reconocer mejor las señales de saciedad.' },
-        { title: 'Carbohidratos Complejos', content: 'Elegir granos enteros, legumbres y vegetales en lugar de carbohidratos refinados.' },
-        { title: 'Combinar con Fibra y Proteína', content: 'Cada comida debe incluir estos macros para reducir el impacto glucémico.' },
-        { title: 'Masticar Bien', content: 'Facilita la digestión y permite que las hormonas de saciedad tengan tiempo de actuar.' }
+        { title: 'Mejor digestión', content: 'Masticar despacio y bien facilita el trabajo estomacal.' },
+        { title: 'Control del peso', content: 'Ayuda a identificar cuándo se está lleno, evitando comer en exceso.' },
+        { title: 'Relación sana con la comida', content: 'Disminuye la culpa, la ansiedad y el comer emocional.' },
+        { title: 'Mayor disfrute', content: 'Al estar presente, se aprecian más los sabores, aromas y texturas.' }
       ]
     }
   },
   {
     id: 'disruptores',
     title: 'Reducir Disruptores Endocrinos',
-    summary: 'Protege tu sistema hormonal ya sensibilizado',
+    summary: 'Protege tu sistema hormonal preventivamente',
     icon: 'shield',
     category: 'protection',
     details: {
       intro: 'Minimizar plásticos, cosméticos con parabenos y alimentos con pesticidas protege tu sistema hormonal.',
-      sopFocus: 'Las mujeres con SOP ya tienen un sistema endocrino sensibilizado; exponerse a disruptores puede empeorar el desequilibrio hormonal existente.',
+      preventionFocus: 'Reducir la exposición a disruptores endocrinos es clave para mantener tu sistema hormonal saludable y prevenir futuros desequilibrios.',
       categories: [
         {
-          title: '🍎 Alimentación',
+          title: '🍎 Alimentación consciente',
           items: [
             'Elige alimentos orgánicos para reducir la ingesta de pesticidas.',
             'Evita calentar comida en recipientes de plástico; usa vidrio o cerámica.',
-            'Limita alimentos enlatados; prefiere opciones frescas o en vidrio.',
-            'Evita verduras o frutas envueltas en plásticos.'
+            'Limita el consumo de alimentos enlatados; prefiere opciones frescas o en vidrio.',
+            'Evita comprar verduras o frutas envueltas en plásticos.'
           ]
         },
         {
-          title: '🧴 Cuidado Personal',
+          title: '🧴 Cuidado personal y cosmética',
           items: [
             'Revisa etiquetas y evita productos con parabenos, ftalatos o fragancias artificiales.',
             'Opta por marcas naturales y ecológicas.',
@@ -160,32 +163,32 @@ const habits: HabitDetail[] = [
           ]
         },
         {
-          title: '🏠 Hogar',
+          title: '🏠 En el hogar',
           items: [
-            'Usa productos de limpieza naturales como vinagre, bicarbonato y jabón neutro.',
-            'Aspira y limpia con regularidad para eliminar polvo.',
-            'Cambia utensilios antiadherentes por acero inoxidable, hierro fundido o cerámica.'
+            'Usa productos de limpieza naturales como vinagre, bicarbonato de sodio y jabón neutro.',
+            'Aspira y limpia con regularidad para eliminar polvo acumulado.',
+            'Cambia utensilios antiadherentes por opciones de acero inoxidable, hierro fundido o cerámica.'
           ]
         },
         {
-          title: '💧 Agua',
+          title: '💧 Agua potable',
           items: [
-            'Filtra el agua de consumo para eliminar metales pesados.',
-            'Usa botellas de vidrio o acero inoxidable.'
+            'Filtra el agua de consumo para eliminar metales pesados y otros contaminantes.',
+            'Usa botellas de vidrio o acero inoxidable en lugar de plástico.'
           ]
         },
         {
-          title: '👕 Ropa',
+          title: '👕 Ropa y textiles',
           items: [
             'Lava ropa nueva antes de usarla para eliminar residuos químicos.',
-            'Prefiere telas naturales como algodón o lino.'
+            'Prefiere telas naturales como algodón o lino, en lugar de sintéticas tratadas químicamente.'
           ]
         },
         {
-          title: '♻️ Residuos',
+          title: '♻️ Manejo de residuos y entorno',
           items: [
-            'Evita quemar basura, especialmente plásticos.',
-            'Minimiza exposición a pinturas y disolventes.'
+            'Evita quemar basura, especialmente plásticos, ya que liberan toxinas al ambiente.',
+            'Minimiza la exposición a pinturas, disolventes y otros químicos fuertes.'
           ]
         }
       ]
@@ -194,18 +197,24 @@ const habits: HabitDetail[] = [
   {
     id: 'revisiones',
     title: 'Revisiones Médicas Periódicas',
-    summary: 'Monitorea ovulación, insulina y andrógenos',
+    summary: 'Detección temprana y prevención personalizada',
     icon: 'clipboard',
     category: 'habits',
     details: {
       intro: 'Chequeos anuales con análisis hormonales permiten detectar desequilibrios tempranos y ajustar hábitos a tiempo.',
-      sopFocus: 'El seguimiento médico regular es esencial para mujeres con SOP, permitiendo ajustar tratamientos y monitorear complicaciones.',
+      preventionFocus: 'La prevención es el mejor camino. Los chequeos regulares permiten detectar cualquier alteración antes de que se convierta en un problema.',
       points: [
-        { title: 'Diagnóstico Temprano', content: 'Actuar antes de que la prediabetes se vuelva diabetes tipo 2.' },
-        { title: 'Manejo del SOP', content: 'Ajustar anticonceptivos, metformina u otros tratamientos según evolución.' },
-        { title: 'Fertilidad', content: 'Monitorear ovulación si se busca embarazo, con apoyo especializado.' },
-        { title: 'Calidad de Vida', content: 'Control de síntomas como acné, hirsutismo y manejo del peso.' }
-      ]
+        { title: 'Detección precoz', content: 'Identifican enfermedades antes de que muestren síntomas evidentes (cáncer, diabetes, hipertensión).' },
+        { title: 'Línea base de salud', content: 'Permiten al médico monitorear cambios año tras año.' },
+        { title: 'Prevención personalizada', content: 'Ayudan a ajustar dieta, ejercicio y manejo del estrés.' }
+      ],
+      stages: {
+        title: '📅 Enfoque por Etapas',
+        items: [
+          'Menores de 30: Chequeos generales cada 2-3 años pueden bastar si se está sano, pero se recomiendan ginecológicos anuales.',
+          '30-50+ años: El chequeo anual se vuelve esencial para controlar riesgos cardiovasculares, óseos (osteoporosis) y metabólicos.'
+        ]
+      }
     }
   }
 ]
@@ -294,18 +303,18 @@ const getCategoryLabel = (category: string) => {
   <div class="space-y-8" @keydown="handleKeydown">
     <!-- Header -->
     <div class="text-center mb-10">
-      <div class="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-habits-200 via-protection-200 to-stress-200 rounded-3xl mb-6 shadow-soft">
+      <div class="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-nutrition-200 via-stress-200 to-sleep-200 rounded-3xl mb-6 shadow-soft">
         <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+          <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
         </svg>
       </div>
       <h3 class="text-2xl font-bold text-gray-700 mb-3">
-        Hábitos Clave para el Manejo del SOP
+        Hábitos de Prevención y Bienestar
       </h3>
       <p class="text-gray-500 max-w-2xl mx-auto leading-relaxed">
-        Estrategias enfocadas en mejorar la <span class="font-medium text-habits-500">sensibilidad a la insulina</span>, 
-        reducir <span class="font-medium text-stress-500">el cortisol</span> y 
-        controlar los <span class="font-medium text-protection-500">andrógenos</span>.
+        Estrategias enfocadas en <span class="font-medium text-nutrition-500">salud metabólica</span>, 
+        <span class="font-medium text-stress-500">bienestar hormonal</span> y 
+        <span class="font-medium text-sleep-500">equilibrio energético</span>.
       </p>
     </div>
 
@@ -385,6 +394,25 @@ const getCategoryLabel = (category: string) => {
         ]">
           Ver detalles
         </button>
+      </div>
+    </div>
+
+    <!-- Recordatorio en pie de página -->
+    <div class="bg-white rounded-3xl shadow-soft border-4 border-nutrition-200 p-6 mt-8">
+      <div class="flex items-center gap-4">
+        <div class="flex-shrink-0 w-14 h-14 bg-gradient-to-br from-nutrition-200 to-stress-200 rounded-2xl flex items-center justify-center">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+          </svg>
+        </div>
+        <div class="flex-1">
+          <p class="text-lg font-medium text-gray-700">
+            "Los hábitos de hoy son tu salud de mañana"
+          </p>
+          <p class="text-sm text-gray-500 mt-1">
+            Pequeños cambios consistentes generan grandes transformaciones en tu bienestar.
+          </p>
+        </div>
       </div>
     </div>
 
@@ -475,17 +503,17 @@ const getCategoryLabel = (category: string) => {
                 </p>
               </div>
 
-              <!-- Enfoque SOP - Destacado -->
-              <div v-if="currentHabit.details.sopFocus" :class="[
+              <!-- Enfoque Prevención - Destacado -->
+              <div v-if="currentHabit.details.preventionFocus" :class="[
                 'mb-6 p-4 rounded-2xl border-l-4',
                 getCategoryClasses(currentHabit.category).light,
                 getCategoryClasses(currentHabit.category).border.split(' ')[0]
               ]">
                 <div class="flex items-start gap-3">
-                  <span class="text-lg">💜</span>
+                  <span class="text-lg">💚</span>
                   <div>
-                    <span class="font-medium text-gray-700 block mb-1">Enfoque SOP</span>
-                    <p class="text-gray-600 text-sm leading-relaxed">{{ currentHabit.details.sopFocus }}</p>
+                    <span class="font-medium text-gray-700 block mb-1">Enfoque Prevención</span>
+                    <p class="text-gray-600 text-sm leading-relaxed">{{ currentHabit.details.preventionFocus }}</p>
                   </div>
                 </div>
               </div>
@@ -533,6 +561,26 @@ const getCategoryLabel = (category: string) => {
                     </li>
                   </ul>
                 </div>
+              </div>
+
+              <!-- Etapas (para Revisiones Médicas) -->
+              <div v-if="currentHabit.details.stages" class="mt-6 p-4 rounded-2xl bg-gray-50">
+                <h5 class="font-medium text-gray-700 mb-3">{{ currentHabit.details.stages.title }}</h5>
+                <ul class="space-y-2">
+                  <li 
+                    v-for="(item, index) in currentHabit.details.stages.items" 
+                    :key="index"
+                    class="flex items-start gap-3 text-sm text-gray-500"
+                  >
+                    <span :class="[
+                      'flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center text-white text-xs font-medium',
+                      getCategoryClasses(currentHabit.category).bg
+                    ]">
+                      {{ index + 1 }}
+                    </span>
+                    <span class="leading-relaxed">{{ item }}</span>
+                  </li>
+                </ul>
               </div>
             </div>
 
