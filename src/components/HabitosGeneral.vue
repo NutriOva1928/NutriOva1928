@@ -283,7 +283,7 @@ const getCategoryClasses = (category: string) => {
       gradient: 'from-protection-300 to-protection-400'
     }
   }
-  return categories[category] || categories.habits
+  return categories[category] || categories.habits!
 }
 
 // Etiquetas de categoría

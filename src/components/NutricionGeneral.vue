@@ -1,9 +1,7 @@
 <script setup lang="ts">
 import { ref, computed } from 'vue'
 
-const props = defineProps<{
-  profile: 'pcos' | 'no-pcos'
-}>()
+
 
 // Estado de la vista: Priorizar vs Limitar
 const viewMode = ref<'prioritize' | 'limit'>('prioritize')
