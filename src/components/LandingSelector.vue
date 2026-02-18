@@ -15,17 +15,17 @@ defineEmits<{
           </svg>
         </div>
         <h1 class="text-4xl md:text-5xl font-bold title-gradient mb-4">
-          NutriHealth
+          Nutriova
         </h1>
         <p class="text-lg md:text-xl text-gray-500 max-w-2xl mx-auto leading-relaxed">
-          Tu guía educativa sobre nutrición y hábitos saludables para el equilibrio hormonal
+          Bienvenida a Nutriova, tu apoyo en el manejo del Síndrome de Ovario Poliquístico
         </p>
       </div>
 
       <!-- Pregunta Principal -->
       <div class="text-center mb-10">
         <h2 class="text-2xl md:text-3xl font-semibold text-gray-700 mb-2">
-          ¿Tienes un diagnóstico médico de SOP?
+          ¿Tienes un diagnóstico médico de Síndrome de Ovario Poliquístico?
         </h2>
         <p class="text-gray-500">
           Selecciona tu situación para personalizar tu experiencia
@@ -47,10 +47,10 @@ defineEmits<{
               </svg>
             </div>
             
-            <span class="badge-pcos mb-4">CON SOP</span>
+            <span class="badge-pcos mb-4">CON DIAGNÓSTICO</span>
             
             <h3 class="text-xl font-semibold text-gray-700 mb-3">
-              Tengo diagnóstico de SOP
+              Tengo diagnóstico de Síndrome de Ovario Poliquístico
             </h3>
             
             <p class="text-gray-500 text-sm leading-relaxed mb-4">
@@ -100,10 +100,10 @@ defineEmits<{
               </svg>
             </div>
             
-            <span class="badge-nopcos mb-4">SIN SOP</span>
+            <span class="badge-nopcos mb-4">SIN DIAGNÓSTICO</span>
             
             <h3 class="text-xl font-semibold text-gray-700 mb-3">
-              No tengo diagnóstico de SOP
+              No tengo diagnóstico de Síndrome de Ovario Poliquístico
             </h3>
             
             <p class="text-gray-500 text-sm leading-relaxed mb-4">

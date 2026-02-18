@@ -21,11 +21,11 @@ interface InfoItem {
 const isModalOpen = ref(false)
 const selectedItem = ref<InfoItem | null>(null)
 
-// Datos Perfil SOP (Manejo)
+// Datos Perfil Síndrome de Ovario Poliquístico (Manejo)
 const pcosItems: InfoItem[] = [
   {
     id: 'que-es',
-    title: '¿Qué es el SOP?',
+    title: '¿Qué es el Síndrome de Ovario Poliquístico?',
     text: 'Trastorno endocrino que afecta entre el 6-13% de las mujeres. Se caracteriza por desequilibrio de andrógenos (acné, vello facial).',
     modalDetail: 'El Síndrome de Ovario Poliquístico es una condición hormonal compleja. El exceso de andrógenos no solo afecta la piel y el vello, sino que influye en todo el metabolismo femenino, requiriendo un enfoque integral de salud.',
     icon: 'M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z',
@@ -37,7 +37,7 @@ const pcosItems: InfoItem[] = [
     id: 'ciclos',
     title: 'Ciclos Irregulares',
     text: 'Períodos menstruales prolongados o ausentes debido a ciclos anovulatorios (sin ovulación).',
-    modalDetail: 'La irregularidad menstrual es una señal de que la ovulación no está ocurriendo de forma predecible. Esto se debe a desequilibrios en las hormonas LH y FSH, lo cual es central en el diagnóstico del SOP.',
+    modalDetail: 'La irregularidad menstrual es una señal de que la ovulación no está ocurriendo de forma predecible. Esto se debe a desequilibrios en las hormonas LH y FSH, lo cual es central en el diagnóstico del Síndrome de Ovario Poliquístico.',
     icon: 'M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z',
     colorClass: 'bg-pastel-sky-100/80',
     borderClass: 'border-pastel-sky-300',
@@ -46,8 +46,8 @@ const pcosItems: InfoItem[] = [
   {
     id: 'insulina',
     title: 'Resistencia a la Insulina',
-    text: 'Afecta al 50-70% de mujeres con SOP. Un factor metabólico que aumenta el riesgo de Diabetes Tipo 2.',
-    modalDetail: 'La resistencia a la insulina es el motor de muchos síntomas del SOP. El cuerpo lucha por procesar el azúcar, lo que eleva la insulina en sangre y, a su vez, estimula a los ovarios a producir más testosterona.',
+    text: 'Afecta al 50-70% de mujeres con este síndrome. Un factor metabólico que aumenta el riesgo de Diabetes Tipo 2.',
+    modalDetail: 'La resistencia a la insulina es el motor de muchos síntomas del Síndrome de Ovario Poliquístico. El cuerpo lucha por procesar el azúcar, lo que eleva la insulina en sangre y, a su vez, estimula a los ovarios a producir más testosterona.',
     icon: 'M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z',
     colorClass: 'bg-pastel-mint-100/80',
     borderClass: 'border-pastel-mint-300',
@@ -57,7 +57,7 @@ const pcosItems: InfoItem[] = [
     id: 'genetica',
     title: 'Factor Genético',
     text: 'Influencia hereditaria y probabilidad familiar; ciertos genes elevan la posibilidad de desarrollar el síndrome.',
-    modalDetail: 'Si tienes familiares directos con SOP, tus genes pueden predisponerte. Sin embargo, la epigenética nos dice que tus hábitos nutricionales y de vida pueden influir en cómo se expresan estos genes.',
+    modalDetail: 'Si tienes familiares directos con Síndrome de Ovario Poliquístico, tus genes pueden predisponerte. Sin embargo, la epigenética nos dice que tus hábitos nutricionales y de vida pueden influir en cómo se expresan estos genes.',
     icon: 'M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z',
     colorClass: 'bg-pastel-pink-100/80',
     borderClass: 'border-pastel-pink-300',
@@ -67,7 +67,7 @@ const pcosItems: InfoItem[] = [
     id: 'emocional',
     title: 'Impacto Emocional',
     text: 'Aumento del riesgo en ansiedad y depresión debido a los cambios hormonales y físicos persistentes.',
-    modalDetail: 'El SOP no solo es físico. Las fluctuaciones hormonales y los cambios en la imagen corporal tienen un impacto real en la salud mental. Reconocer esto es el primer paso para un bienestar integral.',
+    modalDetail: 'El Síndrome de Ovario Poliquístico no solo es físico. Las fluctuaciones hormonales y los cambios en la imagen corporal tienen un impacto real en la salud mental. Reconocer esto es el primer paso para un bienestar integral.',
     icon: 'M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z',
     colorClass: 'bg-pastel-blue-100/80',
     borderClass: 'border-pastel-blue-300',
@@ -75,7 +75,7 @@ const pcosItems: InfoItem[] = [
   }
 ]
 
-// Datos Perfil No-SOP (Prevención)
+// Datos Perfil Sin Diagnóstico (Prevención)
 const prepItems: InfoItem[] = [
   {
     id: 'equilibrio',
@@ -125,7 +125,7 @@ const closeModal = () => {
     </div>
 
     <!-- Cards Grid -->
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 place-items-center">
       <div 
         v-for="item in items" 
         :key="item.id"

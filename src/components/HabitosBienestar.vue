@@ -30,7 +30,7 @@ interface HabitDetail {
   }
 }
 
-// 8 Hábitos de Bienestar para SOP - Enfoque en Acompañamiento y Manejo
+// 8 Hábitos de Bienestar para el Síndrome de Ovario Poliquístico - Enfoque en Acompañamiento y Manejo
 const habits: HabitDetail[] = [
   {
     id: 'hidratacion',
@@ -40,24 +40,24 @@ const habits: HabitDetail[] = [
     category: 'nutrition',
     details: {
       intro: 'Beber al menos 2 litros de agua al día (8 a 10 vasos). La hidratación adecuada mejora función metabólica y ayuda a eliminar toxinas.',
-      sopFocus: 'En el SOP, una buena hidratación ayuda a los órganos encargados de metabolizar y eliminar el exceso de hormonas, como andrógenos.',
+      sopFocus: 'En el Síndrome de Ovario Poliquístico, una buena hidratación ayuda a los órganos encargados de metabolizar y eliminar el exceso de hormonas, como andrógenos.',
       points: [
         { title: 'Función Renal y Hepática', content: 'Mejora la capacidad del cuerpo para eliminar toxinas y exceso de hormonas.' },
-        { title: 'Reduce la Inflamación', content: 'Combate la inflamación crónica asociada al SOP.' },
+        { title: 'Reduce la Inflamación', content: 'Combate la inflamación crónica asociada al síndrome.' },
         { title: 'Control del Apetito', content: 'La sed a veces se confunde con hambre, beber agua regula mejor las señales.' },
-        { title: 'Combate la Fatiga', content: 'La deshidratación leve puede contribuir al cansancio característico del SOP.' }
+        { title: 'Combate la Fatiga', content: 'La deshidratación leve puede contribuir al cansancio característico del síndrome.' }
       ]
     }
   },
   {
     id: 'horarios',
     title: 'Horarios Regulares de Comida',
-    summary: 'Estabiliza glucosa e insulina, clave para el SOP',
+    summary: 'Estabiliza glucosa e insulina, clave para el tratamiento',
     icon: 'clock',
     category: 'nutrition',
     details: {
       intro: 'Comer a horarios similares cada día estabiliza glucosa e insulina, reduciendo antojos y mejorando energía.',
-      sopFocus: 'Dado que la resistencia a la insulina es central en muchos casos de SOP, mantener horarios regulares es una estrategia fundamental.',
+      sopFocus: 'Dado que la resistencia a la insulina es central en muchos casos de Síndrome de Ovario Poliquístico, mantener horarios regulares es una estrategia fundamental.',
       points: [
         { title: 'Frecuencia', content: 'Evitar ayunos prolongados que disparen cortisol y desregulen la insulina. Idealmente 3 comidas principales y 1-2 snacks si es necesario.' },
         { title: 'Equilibrio', content: 'Cada comida debe incluir proteína, fibra y grasa saludable para evitar picos de azúcar.' },
@@ -74,12 +74,12 @@ const habits: HabitDetail[] = [
     category: 'sleep',
     details: {
       intro: 'El sueño de calidad regula cortisol, leptina y grelina (hormonas del estrés y apetito), clave para equilibrio hormonal.',
-      sopFocus: 'En el SOP, el sueño de calidad ayuda a bajar el cortisol, mejorando la ovulación y reduciendo la resistencia a la insulina.',
+      sopFocus: 'En el Síndrome de Ovario Poliquístico, el sueño de calidad ayuda a bajar el cortisol, mejorando la ovulación y reduciendo la resistencia a la insulina.',
       points: [
         { title: 'Grelina y Leptina', content: 'Dormir mal aumenta la grelina (hormona del hambre) y disminuye leptina (saciedad), complicando el control de peso.' },
         { title: 'Cortisol', content: 'Un sueño deficiente eleva el cortisol, lo que empeora la resistencia a la insulina y puede interferir con la ovulación.' },
         { title: 'Insulina', content: 'Estudios muestran que la privación de sueño reduce la sensibilidad a la insulina significativamente.' },
-        { title: 'Ciclo Vicioso', content: 'El SOP puede causar apnea del sueño, la cual a su vez empeora la resistencia a la insulina, creando un círculo negativo.' }
+        { title: 'Ciclo Vicioso', content: 'El síndrome puede causar apnea del sueño, la cual a su vez empeora la resistencia a la insulina, creando un círculo negativo.' }
       ]
     }
   },
@@ -91,11 +91,11 @@ const habits: HabitDetail[] = [
     category: 'habits',
     details: {
       intro: 'Al menos 30 minutos de actividad física moderada mejora sensibilidad a insulina y libera endorfinas.',
-      sopFocus: 'El entrenamiento de fuerza es especialmente importante en el SOP porque aumenta la masa muscular, mejorando la captación de glucosa y reduciendo la resistencia a la insulina.',
+      sopFocus: 'El entrenamiento de fuerza es especialmente importante en el Síndrome de Ovario Poliquístico porque aumenta la masa muscular, mejorando la captación de glucosa y reduciendo la resistencia a la insulina.',
       points: [
         { title: 'Caminar', content: 'Actividad de bajo impacto que mejora la circulación y ayuda a regular el azúcar post-comida.' },
         { title: 'Cardio Moderado', content: 'Correr, nadar, bicicleta - quema de calorías y mejora de salud cardiovascular.' },
-        { title: 'Entrenamiento de Fuerza', content: 'Pesas, bandas de resistencia o peso corporal. Fundamental para SOP porque el músculo es el principal consumidor de glucosa.' }
+        { title: 'Entrenamiento de Fuerza', content: 'Pesas, bandas de resistencia o peso corporal. Fundamental para el síndrome porque el músculo es el principal consumidor de glucosa.' }
       ]
     }
   },
@@ -107,11 +107,11 @@ const habits: HabitDetail[] = [
     category: 'stress',
     details: {
       intro: 'Practicar técnicas de relajación (respiración, meditación, yoga) reduce cortisol elevado que afecta otros ejes hormonales.',
-      sopFocus: 'En el SOP, el estrés crónico eleva el cortisol, lo cual puede aumentar los andrógenos y empeorar los síntomas del síndrome.',
+      sopFocus: 'En el Síndrome de Ovario Poliquístico, el estrés crónico eleva el cortisol, lo cual puede aumentar los andrógenos y empeorar los síntomas.',
       points: [
         { title: 'Respiración Profunda', content: 'Al inhalar lento y profundo, el cuerpo envía señales al cerebro para calmarse, disminuyendo frecuencia cardíaca y presión.' },
         { title: 'Meditación y Mindfulness', content: 'Ayudan a despejar la sobrecarga mental y reducir emociones negativas. Efectivas para bajar cortisol con práctica regular.' },
-        { title: 'Yoga', content: 'Combina ejercicio físico y mental, aliviando la ansiedad y promoviendo relajación profunda, ideal para mujeres con SOP.' }
+        { title: 'Yoga', content: 'Combina ejercicio físico y mental, aliviando la ansiedad y promoviendo relajación profunda, ideal para mujeres con este síndrome.' }
       ]
     }
   },

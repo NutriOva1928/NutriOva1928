@@ -144,6 +144,45 @@ export default {
           400: '#f38db3',
           500: '#e8679a',
         },
+        // Marca Nutriova
+        nutriova: {
+          earth: {
+            50: '#fdfbf7',
+            100: '#f7f1e6',
+            200: '#efe2cd',
+            300: '#e3cba8',
+            400: '#d5af7e',
+            500: '#c8955b', // Base
+            600: '#bb7d4a',
+            700: '#9c633e',
+            800: '#805138',
+            900: '#684330',
+          },
+          green: {
+            50: '#f4f9f4',
+            100: '#e4f1e5',
+            200: '#cce2ce',
+            300: '#a7caa9',
+            400: '#7fae82',
+            500: '#5c9160', // Natural Green Base
+            600: '#46724a',
+            700: '#3a5b3d',
+            800: '#314833',
+            900: '#293c2b',
+          },
+          terracotta: {
+            50: '#fef5f2',
+            100: '#fee8e1',
+            200: '#fcd3c7',
+            300: '#fab6a1',
+            400: '#f68e6e',
+            500: '#eb6642', // Terracotta Base
+            600: '#d94a28',
+            700: '#b53a1d',
+            800: '#94331e',
+            900: '#7a2e1d',
+          },
+        },
       },
       boxShadow: {
         'soft': '0 2px 15px -3px rgba(0, 0, 0, 0.07), 0 10px 20px -2px rgba(0, 0, 0, 0.04)',

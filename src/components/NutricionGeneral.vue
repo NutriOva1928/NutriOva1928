@@ -35,8 +35,8 @@ const prioritizeCategories: NutritionCategory[] = [
     icon: 'broccoli',
     color: 'mint',
     items: [
-      { name: 'Hoja Verde', description: 'Espinacas, acelgas - Ricos en antioxidantes y folato.' },
-      { name: 'Crucíferas', description: 'Brócoli, coliflor - Apoyan la desintoxicación natural del cuerpo.' }
+    { name: 'Hoja Verde', description: 'Espinacas, acelgas - Ricos en antioxidantes y folato. Col y Repollo: Ayudan al hígado a eliminar el exceso de estrógenos. Lechugas (todas): Aportan hidratación y fibra con casi cero calorías. Rúcula y Berro: Su sabor amargo indica que ayudan a digerir mejor las grasas.' },
+      { name: 'Crucíferas', description: 'Brócoli, coliflor - Apoyan la desintoxicación natural del cuerpo. Espárragos: Son diuréticos naturales, ideales si retienes líquidos antes de la regla.' }
     ]
   },
   {
@@ -47,8 +47,8 @@ const prioritizeCategories: NutritionCategory[] = [
     icon: 'fish',
     color: 'mint',
     items: [
-      { name: 'Animales Magras', description: 'Pescados, huevos, aves - Alta biodisponibilidad.' },
-      { name: 'Vegetales', description: 'Legumbres,豆腐, semillas - Aportan fibra y proteína límpia.' }
+      { name: 'Animales Magras', description: 'Pescados, huevos, aves, carnes rojas magras- Alta biodisponibilidad.' },
+      { name: 'Vegetales', description: 'Legumbres, semillas, chochos, quinoa - Aportan fibra y proteína límpia.' }
     ]
   },
   {
@@ -59,11 +59,10 @@ const prioritizeCategories: NutritionCategory[] = [
     icon: 'jar',
     color: 'mint',
     items: [
-      { name: 'Probióticos', description: 'Kéfir, yogur natural sin azúcar, kombucha.' },
-      { name: 'Vegetales Fermentados', description: 'Kimchi, chucrut natural.' }
+      { name: 'Probióticos', description: 'Kéfir, yogur griego natural, kombucha, vinagre de manzana orgánico.' },
+      { name: 'Vegetales Fermentados', description: 'Encurtidos en vinagre de manzana, aceitunas (en salmuera)' }
     ]
-  },
-  {
+  },{
     id: 'frutas',
     title: 'Frutas Frescas',
     subtitle: 'Antioxidantes y energía',
@@ -72,10 +71,8 @@ const prioritizeCategories: NutritionCategory[] = [
     color: 'mint',
     items: [
       { name: 'Cítricos', description: 'Naranja, kiwi, limón - Vitamina C pura.' },
-      { name: 'Bayas', description: 'Arándanos, fresas - Poder antioxidante máximo.' }
-    ]
-  },
-  {
+      { name: 'Bayas', description: 'Arándanos, fresas, mora, frambuesas, mortiño (arándano andino)- Poder antioxidante máximo.'}]
+    },{
     id: 'grasas',
     title: 'Grasas Esenciales',
     subtitle: 'Cerebro y hormonas',
@@ -87,7 +84,6 @@ const prioritizeCategories: NutritionCategory[] = [
     ]
   }
 ]
-
 // 2. Datos para LIMITAR (Sin SOP)
 const limitCategories: NutritionCategory[] = [
   {

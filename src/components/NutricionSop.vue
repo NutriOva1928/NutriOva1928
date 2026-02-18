@@ -25,7 +25,7 @@ interface NutritionCategory {
   items: NutrientItem[]
 }
 
-// 1. Datos para PRIORIZAR (SOP)
+// 1. Datos para PRIORIZAR (Síndrome de Ovario Poliquístico)
 const prioritizeCategories: NutritionCategory[] = [
   {
     id: 'proteinas',
@@ -35,8 +35,8 @@ const prioritizeCategories: NutritionCategory[] = [
     icon: 'chicken',
     color: 'mint',
     items: [
-      { name: 'Fuentes Animales', description: 'Pollo, pavo, pescados blancos, claras de huevo.' },
-      { name: 'Fuentes Vegetales', description: 'Tofu, tempeh, legumbres en porciones moderadas.' }
+      { name: 'Fuentes Animales', description: 'Pollo, pavo, pato, pescados, cerdo, claras de huevo.' },
+      { name: 'Fuentes Vegetales', description: 'Chochos, lentejas, frejoles, garbanzos, habas y arvejas tiernas.' }
     ]
   },
   {
@@ -47,8 +47,8 @@ const prioritizeCategories: NutritionCategory[] = [
     icon: 'leaf',
     color: 'mint',
     items: [
-      { name: 'Ejemplos', description: 'Espinacas, acelgas, kale, rúcula, brócoli.' },
-      { name: 'Beneficio', description: 'Fibra que ralentiza la absorción de azúcares.' }
+      { name: 'Ejemplos', description: 'Espinacas, acelgas, col rizada, rúcula, brócoli.' },
+      { name: 'Beneficio', description: 'Aportan magnesio y fibra esenciales para equilibrar tus hormonas y expulsar el exceso de estrógenos de forma natural.' }
     ]
   },
   {
@@ -59,8 +59,8 @@ const prioritizeCategories: NutritionCategory[] = [
     icon: 'avocado',
     color: 'mint',
     items: [
-      { name: 'Frutos Secos', description: 'Nueces, semillas de chía, linaza, almendras.' },
-      { name: 'Aceites', description: 'Aceite de oliva virgen extra, aguacate.' }
+      { name: 'Frutos Secos y Semillas', description: 'Maní, sacha inchi (maní amazónico), semillas de zapallo, ajonjoli, nueces, almendras, linaza y chia.  .' },
+      { name: 'Aceites', description: 'Aceite de oliva virgen extra, aguacate, coco.' }
     ]
   },
   {
@@ -71,7 +71,7 @@ const prioritizeCategories: NutritionCategory[] = [
     icon: 'wheat',
     color: 'mint',
     items: [
-      { name: 'Opciones', description: 'Avena integral, quinoa, arroz integral, cebada.' },
+      { name: 'Opciones', description: 'Avena integral, quinoa, arroz integral, cebada, amaranto.' },
       { name: 'Tip', description: 'Combinar siempre con proteína o grasa saludable.' }
     ]
   },
@@ -79,12 +79,13 @@ const prioritizeCategories: NutritionCategory[] = [
     id: 'frutas',
     title: 'Frutas Bajo IG',
     subtitle: 'Energía con mucha fibra',
-    reason: 'Aportan vitaminas sin elevar drásticamente el azúcar en sangre, clave para el SOP.',
+    reason: 'Aportan vitaminas sin elevar drásticamente el azúcar en sangre, clave para el Síndrome de Ovario Poliquístico.',
     icon: 'apple',
     color: 'mint',
     items: [
-      { name: 'Frutos Rojos', description: 'Fresas, arándanos, frambuesas.' },
-      { name: 'Cítricos', description: 'Kiwi, naranja, mandarina, manzana verde.' }
+      { name: 'Frutos Rojos', description: 'Mora, frutillas, y frambuesas.' },
+      { name: 'Cítricos', description: 'Limon, lima y toronja.' },
+      { name: 'Verdes', description: 'Manzana verde, tomate de árbol, babaco, guayaba y pera.' }
     ]
   },
   {
@@ -95,12 +96,12 @@ const prioritizeCategories: NutritionCategory[] = [
     icon: 'beans',
     color: 'mint',
     items: [
-      { name: 'Variedad', description: 'Lentejas, garbanzos, frijoles negros, edamame.' }
+      { name: 'Variedad', description: 'Vainitas, garbanzos,habitas tiernas.' }
     ]
   }
 ]
 
-// 2. Datos para LIMITAR (SOP)
+// 2. Datos para LIMITAR (Síndrome de Ovario Poliquístico)
 const limitCategories: NutritionCategory[] = [
   {
     id: 'azucares',
@@ -210,7 +211,7 @@ const closeModal = () => {
       <p class="text-gray-500 leading-relaxed italic">
         {{ viewMode === 'prioritize' 
           ? 'Enfócate en alimentos de baja carga glucémica y alto poder antiinflamatorio para sanar desde adentro.' 
-          : 'Reducir el consumo de estos alimentos ayudará a prevenir picos de insulina y controlar los síntomas del SOP.'
+          : 'Reducir el consumo de estos alimentos ayudará a prevenir picos de insulina y controlar los síntomas del Síndrome de Ovario Poliquístico.'
         }}
       </p>
     </div>
@@ -226,7 +227,7 @@ const closeModal = () => {
           cat.color === 'mint' ? 'bg-pastel-mint-100/60 border-pastel-mint-200 hover:border-pastel-mint-400' : 'bg-pastel-pink-100/60 border-pastel-pink-200 hover:border-pastel-pink-400'
         ]"
       >
-        <div class="flex flex-col h-full">
+        <div class="flex flex-col h-full justify-between items-center text-center">
           <!-- Icon Contextual -->
           <div class="w-16 h-16 rounded-2xl bg-white shadow-sm flex items-center justify-center mb-6 transition-transform group-hover:rotate-6">
             <!-- Iconos Semánticos SVG -->
@@ -269,7 +270,7 @@ const closeModal = () => {
             {{ cat.subtitle }}
           </p>
 
-          <div class="flex items-center gap-3 pt-4 border-t border-black/5">
+          <div class="flex items-center justify-between w-full pt-4 border-t border-black/5">
             <div :class="['w-8 h-8 rounded-full flex items-center justify-center text-white text-xs font-bold', viewMode === 'prioritize' ? 'bg-pastel-mint-400' : 'bg-pastel-pink-400']">
               <svg v-if="viewMode === 'prioritize'" xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
