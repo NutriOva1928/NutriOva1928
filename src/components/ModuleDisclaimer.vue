@@ -120,7 +120,8 @@
     <!-- Legal Footer -->
     <div class="text-center text-xs text-gray-500 mt-6 pb-4">
       <p>© 2026 Nutriova | Proyecto de Tesis | Solo fines educativos</p>
-      <p class="mt-1">Última actualización: Enero 2026</p>
+      <p>Desarrollado por: Sofía Miranda y Carolina Andrade</p>
+      <p class="mt-1">Última actualización: Febrero 2026</p>
     </div>
   </div>
 </template>

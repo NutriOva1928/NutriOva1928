@@ -272,7 +272,8 @@ const activeView = ref<'cards' | 'checklist'>('cards')
               </svg>
             </div>
             <p class="text-sm text-gray-500 leading-relaxed">
-              <span class="font-medium text-gray-600">Tip:</span> No necesitas implementar todos los hábitos a la vez. Elige 1-2 para comenzar y ve sumando poco a poco.
+              <span class="font-medium text-gray-600">Tip:</span> No necesitas implementar todos los hábitos a la vez. Elige 1-2 para comenzar y ve sumando poco a poco. <br>
+              <i>Pequeños hábitos, grandes cambios.</i>
             </p>
           </div>
         </div>

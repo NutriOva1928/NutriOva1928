@@ -120,17 +120,17 @@ const closeModal = () => {
     <div class="mb-10 flex items-center gap-4">
       <div class="h-10 w-1.5 bg-gray-700 rounded-full"></div>
       <h3 class="text-2xl font-bold text-gray-700">
-        {{ profile === 'pcos' ? 'Claves del Diagnóstico' : 'Fundamentos de Prevención' }}
+        {{ profile === 'pcos' ? 'Señales que acompaña el SOP' : 'Fundamentos de Prevención' }}
       </h3>
     </div>
 
     <!-- Cards Grid -->
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 place-items-center">
+    <div class="flex flex-wrap justify-center gap-8">
       <div 
         v-for="item in items" 
         :key="item.id"
         @click="openModal(item)"
-        class="group relative card rounded-3xl p-8 border-2 border-white/50 shadow-sm hover:shadow-soft-lg hover:scale-105 transition-all duration-500 cursor-pointer overflow-hidden"
+        class="group relative card rounded-3xl p-8 border-2 border-white/50 shadow-sm hover:shadow-soft-lg hover:scale-105 transition-all duration-500 cursor-pointer overflow-hidden flex-[1_1_300px] max-w-[360px] w-full"
         :class="item.colorClass"
       >
         <!-- Background Accent -->

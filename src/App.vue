@@ -47,7 +47,7 @@ const showLanding = computed(() => userProfile.value === null)
 const moduleTitle = computed(() => {
   switch (currentModule.value) {
     case 1:
-      return userProfile.value === 'pcos' ? 'Entiendo el Síndrome de Ovario Poliquístico' : 'Entiendo mi Salud'
+      return userProfile.value === 'pcos' ? 'Aprendiendo a escuchar mi cuerpo' : 'Entiendo mi Salud'
     case 2:
       return userProfile.value === 'pcos' ? 'Manejo Nutricional' : 'Nutrición Preventiva'
     case 3:
