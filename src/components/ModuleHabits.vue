@@ -258,9 +258,9 @@ const activeView = ref<'cards' | 'checklist'>('cards')
           ]"
         >
           <div class="text-4xl mb-3">🎉</div>
-          <h3 class="text-xl font-semibold text-gray-700 mb-2">¡Increíble trabajo!</h3>
+          <h3 class="text-xl font-semibold text-gray-700 mb-2">¡Sigue así!  🌸</h3>
           <p class="text-gray-500 text-sm">
-            Has marcado todos los hábitos. Recuerda que la consistencia es más importante que la perfección.
+            No se trata de hacerlo perfecto, sino de elegir cuidarte una y otra vez.
           </p>
         </div>
 

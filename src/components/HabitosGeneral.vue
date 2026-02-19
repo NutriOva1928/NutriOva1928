@@ -91,7 +91,7 @@ const habits: HabitDetail[] = [
     title: 'Movimiento Diario',
     summary: 'Salud cardiovascular y liberación de endorfinas',
     icon: 'activity',
-    category: 'habits',
+    category: 'nutrition',
     details: {
       intro: 'Al menos 30 minutos de actividad física moderada mejora sensibilidad a insulina y libera endorfinas (hormona del bienestar).',
       preventionFocus: 'La actividad física regular es el pilar fundamental para la salud cardiovascular y la liberación de endorfinas que mejoran el bienestar emocional.',
@@ -140,7 +140,7 @@ const habits: HabitDetail[] = [
     title: 'Reducir Disruptores Endocrinos',
     summary: 'Protege tu sistema hormonal preventivamente',
     icon: 'shield',
-    category: 'protection',
+    category: 'sleep',
     details: {
       intro: 'Minimizar plásticos, cosméticos con parabenos y alimentos con pesticidas protege tu sistema hormonal.',
       preventionFocus: 'Reducir la exposición a disruptores endocrinos es clave para mantener tu sistema hormonal saludable y prevenir futuros desequilibrios.',
@@ -199,7 +199,7 @@ const habits: HabitDetail[] = [
     title: 'Revisiones Médicas Periódicas',
     summary: 'Detección temprana y prevención personalizada',
     icon: 'clipboard',
-    category: 'habits',
+    category: 'sleep',
     details: {
       intro: 'Chequeos anuales con análisis hormonales permiten detectar desequilibrios tempranos y ajustar hábitos a tiempo.',
       preventionFocus: 'La prevención es el mejor camino. Los chequeos regulares permiten detectar cualquier alteración antes de que se convierta en un problema.',
@@ -261,13 +261,6 @@ const getCategoryClasses = (category: string) => {
       light: 'bg-nutrition-50',
       gradient: 'from-nutrition-300 to-nutrition-400'
     },
-    habits: {
-      bg: 'bg-habits-300',
-      border: 'border-habits-200 hover:border-habits-400',
-      text: 'text-habits-600',
-      light: 'bg-habits-50',
-      gradient: 'from-habits-300 to-habits-400'
-    },
     stress: {
       bg: 'bg-stress-300',
       border: 'border-stress-200 hover:border-stress-400',
@@ -275,13 +268,6 @@ const getCategoryClasses = (category: string) => {
       light: 'bg-stress-50',
       gradient: 'from-stress-300 to-stress-400'
     },
-    protection: {
-      bg: 'bg-protection-300',
-      border: 'border-protection-200 hover:border-protection-400',
-      text: 'text-protection-600',
-      light: 'bg-protection-50',
-      gradient: 'from-protection-300 to-protection-400'
-    }
   }
   return categories[category] || categories.habits!
 }

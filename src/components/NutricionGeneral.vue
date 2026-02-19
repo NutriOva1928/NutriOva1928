@@ -65,7 +65,7 @@ const prioritizeCategories: NutritionCategory[] = [
   },{
     id: 'frutas',
     title: 'Frutas Frescas',
-    subtitle: 'Antioxidantes y energía',
+    subtitle: 'Antioxidantes, revitalización y energía',
     reason: 'Protegen contra el daño oxidativo y proporcionan energía de liberación controlada.',
     icon: 'orange',
     color: 'mint',
@@ -147,7 +147,7 @@ const closeModal = () => {
           :class="[
             'px-8 py-3 rounded-[1.8rem] text-sm font-bold transition-all duration-300 flex items-center gap-2',
             viewMode === 'prioritize' 
-              ? 'bg-pastel-mint-400 text-white shadow-md scale-105' 
+              ? 'bg-pastel-sky-400 text-white shadow-md scale-105' 
               : 'text-gray-500 hover:text-gray-700'
           ]"
         >
@@ -161,7 +161,7 @@ const closeModal = () => {
           :class="[
             'px-8 py-3 rounded-[1.8rem] text-sm font-bold transition-all duration-300 flex items-center gap-2',
             viewMode === 'limit' 
-              ? 'bg-pastel-pink-400 text-white shadow-md scale-105' 
+              ? 'bg-pastel-lilac-400 text-white shadow-md scale-105' 
               : 'text-gray-500 hover:text-gray-700'
           ]"
         >
@@ -187,14 +187,14 @@ const closeModal = () => {
     </div>
 
     <!-- Grid -->
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 px-2">
+    <div class="flex flex-wrap justify-center gap-8">
       <div 
         v-for="cat in currentList" 
         :key="cat.id"
         @click="openModal(cat)"
         class="group card rounded-3xl p-8 border-2 transition-all duration-500 cursor-pointer shadow-sm hover:shadow-soft-lg hover:scale-105"
         :class="[
-          cat.color === 'mint' ? 'bg-pastel-mint-100/60 border-pastel-mint-200' : 'bg-pastel-pink-100/60 border-pastel-pink-200'
+          cat.color === 'mint' ? 'bg-pastel-sky-100/60 border-pastel-sky-200' : 'bg-pastel-lilac-100/60 border-pastel-lilac-200'
         ]"
       >
         <div class="flex flex-col h-full">
@@ -233,7 +233,7 @@ const closeModal = () => {
           </p>
 
           <div class="flex items-center gap-3 pt-4 border-t border-black/5">
-            <div :class="['w-8 h-8 rounded-full flex items-center justify-center text-white text-xs font-bold', viewMode === 'prioritize' ? 'bg-pastel-mint-400' : 'bg-pastel-pink-400']">
+            <div :class="['w-8 h-8 rounded-full flex items-center justify-center text-white text-xs font-bold', viewMode === 'prioritize' ? 'bg-pastel-sky-400' : 'bg-pastel-lilac-400']">
               <svg v-if="viewMode === 'prioritize'" xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
               </svg>
