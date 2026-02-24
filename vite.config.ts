@@ -4,5 +4,5 @@ import vue from '@vitejs/plugin-vue'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [vue()],
-  base: 'https://rogeraviles22.github.io/NutriHealth',
+  base: 'https://nutriova1928.github.io/NutriOva1928',
 })
